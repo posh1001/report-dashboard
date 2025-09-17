@@ -147,7 +147,7 @@
                 <svg class="w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18" />
                 </svg>
-                Outreach Locations
+                New Outreach Locations
               </label>
               <textarea wire:model.defer="outreach_locations" rows="3" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 shadow-sm"></textarea>
               @error('outreach_locations') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
@@ -159,7 +159,7 @@
                 <svg class="w-5 h-5 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m0 0H5m3 0h3m4 0h3" />
                 </svg>
-                Leaders for Outreaches
+                New Leaders for Outreaches
               </label>
               <textarea wire:model.defer="leaders_for_outreach" rows="3" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-purple-500 shadow-sm"></textarea>
               @error('leaders_for_outreach') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
@@ -171,10 +171,43 @@
                 <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
-                Pastors & Coordinators
+                New Pastors & Coordinators
               </label>
               <textarea wire:model.defer="pastors_coordinators" rows="3" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 shadow-sm"></textarea>
               @error('pastors_coordinators') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <!-- pastors_coordinators -->
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                New Cell Pioneered(List)
+              </label>
+              <textarea wire:model.defer="cell_pioneered" rows="3" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 shadow-sm"></textarea>
+              @error('cell-pioneered') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <!-- pastors_coordinators -->
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                New Churches Pioneered(List)
+              </label>
+              <textarea wire:model.defer="churches_pioneered" rows="3" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 shadow-sm"></textarea>
+              @error('churches-pioneered') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <!-- pastors_coordinators -->
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                New Service Centers Pioneered(List)
+              </label>
+              <textarea wire:model.defer="centers_pioneered" rows="3" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-500 shadow-sm"></textarea>
+              @error('centers-pioneered') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
           </div>
         @endif
@@ -188,7 +221,7 @@
                 <svg class="w-5 h-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h11M9 21V3" />
                 </svg>
-                Foundation School Enrollment
+                Number Enrolled In Foundation School
               </label>
               <input type="number" wire:model.defer="foundation_school" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 shadow-sm" min="0">
               @error('foundation_school') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
@@ -200,7 +233,7 @@
                 <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
-                Invitees Baptized
+                New Invitees Baptized
               </label>
               <input type="number" wire:model.defer="baptized" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-500 shadow-sm" min="0">
               @error('baptized') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
@@ -212,10 +245,50 @@
                 <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-                Service Centers Identified
+                New Service Centers Pioneered
               </label>
               <input type="number" wire:model.defer="service_centers" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
               @error('service_centers') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                New Cells Pioneered
+              </label>
+              <input type="number" wire:model.defer="new_cells" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('new-cells') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                Number Of Returning Invitees for ANOB
+              </label>
+              <input type="number" wire:model.defer="returning_invitees" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('returning-invitee') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                New Churches Pioneered
+              </label>
+              <input type="number" wire:model.defer="new_church" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('new-church') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                Highest Service Attendance(Post)
+              </label>
+              <input type="number" wire:model.defer="attendance" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('attendance') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
           </div>
         @endif

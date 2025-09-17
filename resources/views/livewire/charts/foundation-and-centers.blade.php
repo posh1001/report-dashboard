@@ -46,8 +46,8 @@
             }
 
             $charts = [
-                'Foundation School Enrollment' => ['data' => $foundation, 'color' => '#4f46e5', 'gradientId' => 'gradFoundation'],
-                'Service Centers' => ['data' => $serviceCenters, 'color' => '#db2777', 'gradientId' => 'gradService']
+                'Total Foundation School Enrollment' => ['data' => $foundation, 'color' => '#4f46e5', 'gradientId' => 'gradFoundation'],
+                'New Service Centers Pioneered' => ['data' => $serviceCenters, 'color' => '#db2777', 'gradientId' => 'gradService']
             ];
         @endphp
 

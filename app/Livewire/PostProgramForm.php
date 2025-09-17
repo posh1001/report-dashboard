@@ -16,9 +16,11 @@ class PostProgramForm extends Component
 
     // Step 2
     public $new_cell_leaders, $outreach_locations, $leaders_for_outreach, $pastors_coordinators;
+    public $cell_pioneered, $churches_pioneered, $centers_pioneered;
 
     // Step 3
     public $foundation_school = 0, $baptized = 0, $service_centers = 0;
+    public $new_cells = 0, $returning_invitees = 0, $new_church = 0, $attendance = 0;
 
     protected $rules = [
         // Step 1
@@ -33,11 +35,18 @@ class PostProgramForm extends Component
         'outreach_locations' => 'nullable|string|max:1000',
         'leaders_for_outreach' => 'nullable|string|max:1000',
         'pastors_coordinators' => 'nullable|string|max:1000',
+        'cell_pioneered' => 'nullable|string|max:1000',
+        'churches_pioneered' => 'nullable|string|max:1000',
+        'centers_pioneered' => 'nullable|string|max:1000',
 
         // Step 3
         'foundation_school' => 'nullable|integer|min:0',
         'baptized' => 'nullable|integer|min:0',
         'service_centers' => 'nullable|integer|min:0',
+        'new_cells' => 'nullable|integer|min:0',
+        'returning_invitees' => 'nullable|integer|min:0',
+        'new_church' => 'nullable|integer|min:0',
+        'attendance' => 'nullable|integer|min:0',
     ];
 
     public function mount()
@@ -50,7 +59,7 @@ class PostProgramForm extends Component
         return view('livewire.post-program-form');
     }
 
-    // Step-specific rules
+    // Step-specific validation rules
     public function rulesForStep()
     {
         return match($this->currentStep) {
@@ -66,11 +75,18 @@ class PostProgramForm extends Component
                 'outreach_locations' => $this->rules['outreach_locations'],
                 'leaders_for_outreach' => $this->rules['leaders_for_outreach'],
                 'pastors_coordinators' => $this->rules['pastors_coordinators'],
+                'cell_pioneered' => $this->rules['cell_pioneered'],
+                'churches_pioneered' => $this->rules['churches_pioneered'],
+                'centers_pioneered' => $this->rules['centers_pioneered'],
             ],
             3 => [
                 'foundation_school' => $this->rules['foundation_school'],
                 'baptized' => $this->rules['baptized'],
                 'service_centers' => $this->rules['service_centers'],
+                'new_cells' => $this->rules['new_cells'],
+                'returning_invitees' => $this->rules['returning_invitees'],
+                'new_church' => $this->rules['new_church'],
+                'attendance' => $this->rules['attendance'],
             ],
         };
     }
@@ -106,9 +122,16 @@ class PostProgramForm extends Component
             'outreach_locations' => $this->outreach_locations,
             'leaders_for_outreach' => $this->leaders_for_outreach,
             'pastors_coordinators' => $this->pastors_coordinators,
+            'cell_pioneered' => $this->cell_pioneered,
+            'churches_pioneered' => $this->churches_pioneered,
+            'centers_pioneered' => $this->centers_pioneered,
             'foundation_school' => $this->foundation_school ?: 0,
             'baptized' => $this->baptized ?: 0,
             'service_centers' => $this->service_centers ?: 0,
+            'new_cells' => $this->new_cells ?: 0,
+            'returning_invitees' => $this->returning_invitees ?: 0,
+            'new_church' => $this->new_church ?: 0,
+            'attendance' => $this->attendance ?: 0,
         ]);
 
         $this->resetForm();
@@ -133,8 +156,15 @@ class PostProgramForm extends Component
         $this->outreach_locations = null;
         $this->leaders_for_outreach = null;
         $this->pastors_coordinators = null;
+        $this->cell_pioneered = null;
+        $this->churches_pioneered = null;
+        $this->centers_pioneered = null;
         $this->foundation_school = 0;
         $this->baptized = 0;
         $this->service_centers = 0;
+        $this->new_cells = 0;
+        $this->returning_invitees = 0;
+        $this->new_church = 0;
+        $this->attendance = 0;
     }
 }
