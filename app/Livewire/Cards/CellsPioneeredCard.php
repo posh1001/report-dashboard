@@ -16,13 +16,21 @@ class CellsPioneeredCard extends Component
 
     public function loadData()
     {
-        $this->cellPioneered = PostProgram::sum('cell_pioneered');
+        $leaders = PostProgram::pluck('cell_pioneered');
+
+        $count = 0;
+        foreach ($leaders as $entry) {
+            if (!empty($entry)) {
+                $names = array_filter(array_map('trim', explode(',', $entry)));
+                $count += count($names);
+            }
+        }
+
+        $this->cellPioneered = $count;
     }
 
     public function render()
     {
-        $this->loadData();
-
         return view('livewire.cards.cells-pioneered-card');
     }
 }

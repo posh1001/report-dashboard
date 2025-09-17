@@ -70,7 +70,7 @@
                 $fontSize = min(10, max(6, $minSpacing * 0.15));
             @endphp
 
-            <div class="bg-white rounded-2xl shadow-xl p-6 h-80 flex flex-col overflow-x-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-6 h-80 flex flex-col">
                 <h2 class="text-lg font-semibold mb-4" style="color: {{ $chart['color'] }}">{{ $title }}</h2>
 
                 <div class="flex-1 min-w-full">

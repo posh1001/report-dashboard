@@ -64,6 +64,15 @@ return new class extends Migration {
                 $table->string('phone')->nullable();
 
                 // Step 2
+                $table->unsignedInteger('foundation_school')->default(0);
+                $table->unsignedInteger('baptized')->default(0);
+                $table->unsignedInteger('service_centers')->default(0);
+                $table->unsignedInteger('new_cells')->default(0);
+                $table->unsignedInteger('returning_invitees')->default(0);
+                $table->unsignedInteger('new_church')->default(0);
+                $table->unsignedInteger('attendance')->default(0);
+
+                // Step 3
                 $table->text('new_cell_leaders')->nullable();
                 $table->text('outreach_locations')->nullable();
                 $table->text('leaders_for_outreach')->nullable();
@@ -72,14 +81,6 @@ return new class extends Migration {
                 $table->text('churches_pioneered')->nullable();
                 $table->text('centers_pioneered')->nullable();
 
-                // Step 3
-                $table->unsignedInteger('foundation_school')->default(0);
-                $table->unsignedInteger('baptized')->default(0);
-                $table->unsignedInteger('service_centers')->default(0);
-                $table->unsignedInteger('new_cells')->default(0);
-                $table->unsignedInteger('returning_invitees')->default(0);
-                $table->unsignedInteger('new_church')->default(0);
-                $table->unsignedInteger('attendance')->default(0);
 
                 // Notifications
                 $table->boolean('is_read')->default(false);

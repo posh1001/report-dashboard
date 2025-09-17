@@ -127,7 +127,88 @@
         @endif
 
         <!-- STEP 2 -->
-        @if ($currentStep === 2)
+         @if ($currentStep === 2)
+          <div class="grid grid-cols-1 gap-4">
+            <!-- foundation_school -->
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h11M9 21V3" />
+                </svg>
+                Number Enrolled In Foundation School
+              </label>
+              <input type="number" wire:model.defer="foundation_school" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 shadow-sm" min="0">
+              @error('foundation_school') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+
+            <!-- baptized -->
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                New Invitees Baptized
+              </label>
+              <input type="number" wire:model.defer="baptized" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-500 shadow-sm" min="0">
+              @error('baptized') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+
+            <!-- service_centers -->
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                New Service Centers Pioneered
+              </label>
+              <input type="number" wire:model.defer="service_centers" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('service_centers') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                New Cells Pioneered
+              </label>
+              <input type="number" wire:model.defer="new_cells" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('new-cells') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                Number Of Returning Invitees for ANOB
+              </label>
+              <input type="number" wire:model.defer="returning_invitees" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('returning-invitee') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+             <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                New Churches Pioneered
+              </label>
+              <input type="number" wire:model.defer="new_church" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('new-church') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+            <div>
+              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                Highest Service Attendance(Post)
+              </label>
+              <input type="number" wire:model.defer="attendance" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
+              @error('attendance') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+          </div>
+        @endif
+
+        <!-- STEP 3 -->
+        @if ($currentStep === 3)
           <div class="grid grid-cols-1 gap-4">
             <!-- new_cell_leaders -->
             <div>
@@ -212,86 +293,6 @@
           </div>
         @endif
 
-        <!-- STEP 3 -->
-        @if ($currentStep === 3)
-          <div class="grid grid-cols-1 gap-4">
-            <!-- foundation_school -->
-            <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h11M9 21V3" />
-                </svg>
-                Number Enrolled In Foundation School
-              </label>
-              <input type="number" wire:model.defer="foundation_school" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 shadow-sm" min="0">
-              @error('foundation_school') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-
-            <!-- baptized -->
-            <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                </svg>
-                New Invitees Baptized
-              </label>
-              <input type="number" wire:model.defer="baptized" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-500 shadow-sm" min="0">
-              @error('baptized') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-
-            <!-- service_centers -->
-            <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                New Service Centers Pioneered
-              </label>
-              <input type="number" wire:model.defer="service_centers" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
-              @error('service_centers') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-             <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                New Cells Pioneered
-              </label>
-              <input type="number" wire:model.defer="new_cells" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
-              @error('new-cells') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-            <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                Number Of Returning Invitees for ANOB
-              </label>
-              <input type="number" wire:model.defer="returning_invitees" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
-              @error('returning-invitee') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-             <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                New Churches Pioneered
-              </label>
-              <input type="number" wire:model.defer="new_church" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
-              @error('new-church') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-            <div>
-              <label class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                <svg class="w-5 h-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                Highest Service Attendance(Post)
-              </label>
-              <input type="number" wire:model.defer="attendance" class="w-full rounded-xl border-gray-300 px-4 py-3 focus:ring-2 focus:ring-indigo-400 shadow-sm" min="0">
-              @error('attendance') <p class="text-red-600 text-sm mt-1">{{ $message }}</p> @enderror
-            </div>
-          </div>
-        @endif
 
         <!-- Navigation Buttons -->
         <div class="flex items-center justify-between mt-4">
