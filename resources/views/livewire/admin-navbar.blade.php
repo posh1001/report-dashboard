@@ -11,7 +11,7 @@
              {{-- @livewire('search-reports') --}}
 
             <!-- Right Section -->
-            <div class="hidden md:flex items-center space-x-4">
+            <div class="hidden md:flex items-center space-x-8">
                 <!-- Notification Bell -->
                 <livewire:update-notification />
 

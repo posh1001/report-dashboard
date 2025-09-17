@@ -1,4 +1,4 @@
-<div wire:poll.10s
+<div wire:poll.5s
      class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-2xl shadow-lg p-4 sm:p-6 flex items-center justify-between">
 
     <div>

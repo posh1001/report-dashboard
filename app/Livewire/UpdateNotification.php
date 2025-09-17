@@ -7,52 +7,40 @@ use App\Models\PostProgram;
 
 class UpdateNotification extends Component
 {
-    public $notifications = 0;        // Badge count
-    public $currentReports = [];      // Latest reports
-    public $showDropdown = false;     // Controls dropdown state
+    public $notifications = 0;
+    public $currentReports = [];
+    public $showDropdown = false;
+    public $badgeHidden = false;      // Tracks if badge should be hidden
 
     public function mount()
     {
         $this->refreshReports();
     }
 
-    /**
-     * Refresh unread notifications
-     */
+    // Refresh unread notifications
     public function refreshReports()
     {
-        // Fetch unread reports
-        $this->currentReports = PostProgram::where('read', false)
-            ->latest()
-            ->take(10)
-            ->get();
+        $this->currentReports = PostProgram::where('read', false)->latest()->get();
 
-        $this->notifications = $this->currentReports->count();
+        // Only show badge if it hasn't been hidden yet
+        if (!$this->badgeHidden) {
+            $this->notifications = $this->currentReports->count();
+        }
     }
 
-    /**
-     * Toggle dropdown open/close
-     */
+    // Toggle dropdown
     public function toggleDropdown()
     {
         $this->showDropdown = !$this->showDropdown;
 
-        // If dropdown opens → mark notifications as read
-        if ($this->showDropdown) {
-            $this->markAllAsRead();
+        if ($this->showDropdown && !$this->badgeHidden) {
+            // Hide badge when dropdown opens
+            $this->badgeHidden = true;
+            $this->notifications = 0;
+
+            // Optionally mark all as read in DB so they stay persistent
+            PostProgram::where('read', false)->update(['read' => true]);
         }
-    }
-
-    /**
-     * Mark all notifications as read
-     */
-    public function markAllAsRead()
-    {
-        PostProgram::where('read', false)->update(['read' => true]);
-        $this->notifications = 0;
-
-        // Refresh to show updated state
-        $this->refreshReports();
     }
 
     public function render()
