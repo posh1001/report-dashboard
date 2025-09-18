@@ -41,7 +41,7 @@ Route::get('/reports/{report}', [ReportController::class, 'show'])->name('report
 
 Route::get('/dashboard', function() {
     return view('dashboard-page');
-});
+})->middleware('auth:admin');
 
 
 

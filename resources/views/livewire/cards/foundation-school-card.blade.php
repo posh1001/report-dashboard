@@ -2,7 +2,7 @@
      class="bg-white text-gray-900 rounded-2xl shadow-lg p-4 sm:p-6 flex items-center justify-between">
 
     <div>
-        <p class="text-sm font-medium opacity-70">Total Foundation School</p>
+        <p class="text-sm font-medium opacity-70">Total Foundation School Enrollment</p>
 
         <!-- Live value with gradient color -->
         <h2 class="text-2xl sm:text-3xl font-extrabold mt-1 sm:mt-2 bg-clip-text text-transparent
