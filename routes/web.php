@@ -2,17 +2,35 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AdminController;
+
+// Admin routes
+Route::prefix('admin')->group(function () {
+
+    // Show login form
+    Route::get('login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+
+    // Handle login submission
+    Route::post('login', [AdminController::class, 'login'])->name('admin.login.submit');
+
+    // Protected routes for logged-in admins
+    Route::middleware('auth:admin')->group(function () {
+
+        // Admin dashboard
+        Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+        // Logout
+        Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
+    });
+});
+
+
 
 
 Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
 Route::get('/reports/{report}', [ReportController::class, 'show'])->name('reports.show');
 
-
-Route::get('/admin-login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin-login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
-Route::post('/admin-logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 // Dashboard route protected by admin middleware
 // Route::middleware('auth:admin')->group(function () {
