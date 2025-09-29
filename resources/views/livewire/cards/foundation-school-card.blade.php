@@ -4,9 +4,9 @@
     <div>
         <p class="text-sm font-medium opacity-70">Total Foundation School Enrollment</p>
 
-        <!-- Live value with gradient color -->
+        <!-- Live value with blue gradient -->
         <h2 class="text-2xl sm:text-3xl font-extrabold mt-1 sm:mt-2 bg-clip-text text-transparent
-                   bg-gradient-to-r from-green-500 to-emerald-400 transition-all duration-300">
+                   bg-gradient-to-r from-blue-500 to-blue-700 transition-all duration-300">
             {{ $totalFoundationSchool }}
         </h2>
     </div>
@@ -14,11 +14,11 @@
     <div class="p-2 sm:p-3 rounded-xl bg-white shadow flex items-center justify-center">
         <svg xmlns="http://www.w3.org/2000/svg"
              class="w-6 sm:w-8 h-6 sm:h-8"
-             fill="none" viewBox="0 0 24 24" stroke="url(#greenGradient)">
+             fill="none" viewBox="0 0 24 24" stroke="url(#blueGradient)">
             <defs>
-                <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#22c55e"/> <!-- green-500 -->
-                    <stop offset="100%" stop-color="#10b981"/> <!-- emerald-400 -->
+                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#3b82f6"/> <!-- blue-500 -->
+                    <stop offset="100%" stop-color="#1d4ed8"/> <!-- blue-700 -->
                 </linearGradient>
             </defs>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

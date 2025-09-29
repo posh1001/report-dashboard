@@ -45,9 +45,10 @@
                 return [$points, $path, $fillPath, $max];
             }
 
+            // 🔹 Both charts updated to use blue
             $charts = [
-                ' Foundation School Enrollment' => ['data' => $foundation, 'color' => '#4f46e5', 'gradientId' => 'gradFoundation'],
-                'New Service Centers Pioneered' => ['data' => $serviceCenters, 'color' => '#db2777', 'gradientId' => 'gradService']
+                'Foundation School Enrollment' => ['data' => $foundation, 'color' => '#3b82f6', 'gradientId' => 'gradFoundation'],
+                'New Service Centers Pioneered' => ['data' => $serviceCenters, 'color' => '#3b82f6', 'gradientId' => 'gradService']
             ];
         @endphp
 
@@ -78,8 +79,8 @@
                         <!-- Gradient -->
                         <defs>
                             <linearGradient id="{{ $chart['gradientId'] }}" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="{{ $chart['color'] }}" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="{{ $chart['color'] }}" stop-opacity="0"/>
+                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
                             </linearGradient>
                         </defs>
 
